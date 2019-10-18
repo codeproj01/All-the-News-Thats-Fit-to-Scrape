@@ -97,8 +97,8 @@ router.get('/scrape', function(req, res, next) {
     axios.get("https://www.nytimes.com/").then(function (response) {
         //console.log(response);
     //load that into cheerio and save it to $ for a shorthand selector
-        let $ = cheerio.load(html);
-        var $ = cheerio.load(response.data);
+        //let $ = cheerio.load(html);
+        let $ = cheerio.load(response.data);
         $('tr.athing td.title').each(function(i, e) {
             // Save text of the element in a "title" variable
             let title = $(this).children('a').text();

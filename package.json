@@ -1,5 +1,5 @@
 {
-  "name": "all-the-news-that-s-fit-to-scrape",
+  "name": "all-the-news-thats-fit-to-scrape",
   "version": "1.0.0",
   "description": "A web app that lets users view and leave comments on the latest news.",
   "main": "index.js",

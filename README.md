@@ -1,7 +1,7 @@
 # All-the-News-Thats-Fit-to-Scrape
 ### A web app that lets users view and leave comments on the latest news.
 
-https://all-news-fit-to-scrape.herokuapp.com/
+https://allnews-heroku-app-2019.herokuapp.com/
 
 A user visits your site, the app should scrape stories from a news outlet of your choice and display them for the user. Each scraped article should be saved to your application database. At a minimum, the app should scrape and display the following information for each article:
 

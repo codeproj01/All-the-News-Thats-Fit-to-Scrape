@@ -26,8 +26,8 @@ app.use(require('./controllers'));
 // configure mongoose to log into db
 mongoose.Promise = Promise;
 
-const dbURI = process.env.MONGODB_URI || "mongodb://localhost:27017/mongoNewsArticles";
-
+//const dbURI = process.env.MONGODB_URI || "mongodb://localhost:27017/mongoNewsArticles";
+const dbURI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines"
 // Database configuration with mongoose
 mongoose.set('useCreateIndex', true)
 mongoose.connect(dbURI, { useNewUrlParser: true });

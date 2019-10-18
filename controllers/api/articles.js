@@ -3,7 +3,7 @@ const router = express.Router();
 const cheerio = require('cheerio');
 const Article = require('../../models/article');
 const axios = require('axios');
-//var request = require('request');
+var request = require('request');
      
 // get all 
 router.get('/', function(req, res) {
@@ -94,15 +94,15 @@ router.delete('/:id', function(req, res) {
 // scrape all articles
 router.get('/scrape', function(req, res, next) {
 
-    //request('https://www.washingtonpost.com', function(error, response, html) { 
-    //request('https://www.economist.com/latest/', function(error, response, html) { 
-    //grab the body of the html with axios
-    axios.get("https://www.washingtonpost.com/").then(function (response) {
+    axios.get("https://www.nytimes.com/").then(function (response) {
+        //console.log(response);
     //load that into cheerio and save it to $ for a shorthand selector
-        //let $ = cheerio.load(html);
+        let $ = cheerio.load(html);
         var $ = cheerio.load(response.data);
         $('tr.athing td.title').each(function(i, e) {
+            // Save text of the element in a "title" variable
             let title = $(this).children('a').text();
+            console.log("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH" + title);
             let link = $(this).children('a').attr('href');
             let single = {};
             if (link !== undefined && link.includes('https') &&  title !== '') {
